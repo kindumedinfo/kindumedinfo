@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>KinduMedInfo</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+
+body{
+font-family:Arial;
+margin:0;
+background:#f5f9ff;
+}
+
+header{
+background:blue;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+nav{
+background:green;
+text-align:center;
+padding:10px;
+}
+
+nav a{
+color:white;
+margin:10px;
+text-decoration:none;
+font-weight:bold;
+}
+
+nav a:hover{
+color:yellow;
+}
+
+section{
+padding:30px;
+}
+
+h2{
+color:red;
+}
+
+.disease{
+background:white;
+padding:15px;
+margin:10px 0;
+border-left:5px solid blue;
+}
+
+.disease h3{
+cursor:pointer;
+}
+
+.disease-details{
+display:none;
+margin-top:10px;
+background:#eef4ff;
+padding:10px;
+}
+
+input{
+padding:10px;
+width:300px;
+}
+
+footer{
+background:blue;
+color:white;
+text-align:center;
+padding:10px;
+}
+
+@media(max-width:768px){
+input{width:90%;}
+nav a{display:block;margin:5px;}
+}
+
+</style>
+
+</head>
+
+<body>
+
+<header>
+
+<h1>KinduMedInfo</h1>
+<p>Medical Knowledge and Disease Information</p>
+
+</header>
+
+<nav>
+
+<a href="#home">Home</a>
+<a href="#diseases">Diseases</a>
+<a href="#contact">Contact</a>
+
+</nav>
+
+<section id="home">
+
+<h2>Home</h2>
+
+<p>Welcome to KinduMedInfo. This website provides medical information about diseases, symptoms, treatment and prevention.</p>
+
+</section>
+
+<section id="diseases">
+
+<h2>Disease Database</h2>
+
+<input type="text" id="search" placeholder="Search disease..." onkeyup="searchDisease()">
+
+<div id="disease-list"></div>
+
+</section>
+
+<section id="contact">
+
+<h2>Contact</h2>
+
+<p>Email: kindutegegne272@gmail.com</p>
+<p>Phone: +251953235738</p>
+<p>Address: Ethiopia</p>
+
+</section>
+
+<footer>
+
+<p>© 2026 KinduMedInfo</p>
+
+</footer>
+
+<script>
+
+const diseases = [
+
+{ id:"d1", name:"Malaria", cause:"Plasmodium parasite", symptoms:"Fever chills headache", treatment:"Antimalarial drugs", prevention:"Mosquito nets" },
+{ id:"d2", name:"Tuberculosis", cause:"Mycobacterium tuberculosis", symptoms:"Cough fever night sweats", treatment:"Antibiotics", prevention:"BCG vaccine" },
+{ id:"d3", name:"Diabetes", cause:"High blood sugar", symptoms:"Frequent urination thirst", treatment:"Insulin", prevention:"Healthy lifestyle" },
+{ id:"d4", name:"Hypertension", cause:"High blood pressure", symptoms:"Headache dizziness", treatment:"Medication", prevention:"Low salt diet" },
+{ id:"d5", name:"Asthma", cause:"Airway inflammation", symptoms:"Wheezing short breath", treatment:"Inhaler", prevention:"Avoid triggers" },
+{ id:"d6", name:"Pneumonia", cause:"Lung infection", symptoms:"Cough fever chest pain", treatment:"Antibiotics", prevention:"Vaccination" },
+{ id:"d7", name:"HIV AIDS", cause:"HIV virus", symptoms:"Weak immunity", treatment:"ART drugs", prevention:"Safe practices" },
+{ id:"d8", name:"Cholera", cause:"Contaminated water bacteria", symptoms:"Severe diarrhea", treatment:"ORS antibiotics", prevention:"Clean water" },
+{ id:"d9", name:"Typhoid", cause:"Salmonella typhi", symptoms:"Fever weakness", treatment:"Antibiotics", prevention:"Sanitation" },
+{ id:"d10", name:"Scabies", cause:"Skin mite infestation", symptoms:"Severe itching rash", treatment:"Permethrin cream", prevention:"Hygiene" },
+
+{ id:"d11", name:"Bronchitis", cause:"Bronchial inflammation", symptoms:"Cough mucus", treatment:"Rest medication", prevention:"Avoid smoking" },
+{ id:"d12", name:"Appendicitis", cause:"Inflamed appendix", symptoms:"Abdominal pain", treatment:"Surgery", prevention:"None" },
+{ id:"d13", name:"Eczema", cause:"Skin inflammation", symptoms:"Itching rash", treatment:"Moisturizers steroid cream", prevention:"Avoid irritants" },
+{ id:"d14", name:"Migraine", cause:"Neurological triggers", symptoms:"Severe headache", treatment:"Pain medicine", prevention:"Avoid triggers" },
+{ id:"d15", name:"Gastritis", cause:"Stomach inflammation", symptoms:"Stomach pain nausea", treatment:"Antacids", prevention:"Healthy diet" },
+
+{ id:"d16", name:"Ulcer", cause:"Stomach acid damage", symptoms:"Burning stomach pain", treatment:"Medication", prevention:"Avoid alcohol" },
+{ id:"d17", name:"Anemia", cause:"Low hemoglobin", symptoms:"Fatigue weakness", treatment:"Iron supplements", prevention:"Balanced diet" },
+{ id:"d18", name:"Arthritis", cause:"Joint inflammation", symptoms:"Joint pain stiffness", treatment:"Pain medicine", prevention:"Exercise" },
+{ id:"d19", name:"Stroke", cause:"Blood flow blocked in brain", symptoms:"Weakness speech problem", treatment:"Emergency care", prevention:"Control BP" },
+{ id:"d20", name:"Heart Attack", cause:"Blocked coronary artery", symptoms:"Chest pain sweating", treatment:"Emergency treatment", prevention:"Healthy lifestyle" },
+
+{ id:"d21", name:"Dengue Fever", cause:"Mosquito virus", symptoms:"High fever pain", treatment:"Supportive care", prevention:"Mosquito control" },
+{ id:"d22", name:"Influenza", cause:"Flu virus", symptoms:"Fever cough fatigue", treatment:"Rest fluids", prevention:"Vaccine" },
+{ id:"d23", name:"COVID 19", cause:"Coronavirus", symptoms:"Fever cough breathing difficulty", treatment:"Supportive care", prevention:"Vaccination" },
+{ id:"d24", name:"Chickenpox", cause:"Varicella virus", symptoms:"Itchy rash fever", treatment:"Antivirals", prevention:"Vaccine" },
+{ id:"d25", name:"Measles", cause:"Measles virus", symptoms:"Rash fever", treatment:"Supportive care", prevention:"Vaccine" }
+
+];
+
+const diseaseList=document.getElementById("disease-list");
+
+diseases.forEach(d=>{
+
+const div=document.createElement("div");
+
+div.className="disease";
+
+div.innerHTML=`
+
+<h3 onclick="showDetails('${d.id}')">${d.name}</h3>
+
+<div id="${d.id}" class="disease-details">
+
+<p><b>Cause:</b> ${d.cause}</p>
+
+<p><b>Symptoms:</b> ${d.symptoms}</p>
+
+<p><b>Treatment:</b> ${d.treatment}</p>
+
+<p><b>Prevention:</b> ${d.prevention}</p>
+
+</div>
+
+`;
+
+diseaseList.appendChild(div);
+
+});
+
+function showDetails(id){
+
+let details=document.querySelectorAll(".disease-details");
+
+details.forEach(d=>d.style.display="none");
+
+document.getElementById(id).style.display="block";
+
+}
+
+function searchDisease(){
+
+let input=document.getElementById("search").value.toLowerCase();
+
+let diseases=document.querySelectorAll(".disease");
+
+diseases.forEach(d=>{
+
+if(d.innerText.toLowerCase().includes(input)){
+d.style.display="block";
+}else{
+d.style.display="none";
+}
+
+});
+
+}
+
+</script>
+
+</body>
+
+</html>
