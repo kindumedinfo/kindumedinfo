@@ -1,0 +1,163 @@
+const diseases = [
+
+{
+name:"Malaria",
+image:"images/malaria.jpg",
+description:"Malaria is a mosquito-borne infectious disease caused by Plasmodium parasites transmitted by Anopheles mosquitoes.",
+symptoms:"Fever, chills, headache, sweating, vomiting",
+treatment:"Artemisinin-based combination therapy (ACT)"
+},
+
+{
+name:"Tuberculosis",
+image:"images/tuberculosis.jpg",
+description:"Tuberculosis is a bacterial infection caused by Mycobacterium tuberculosis that primarily affects the lungs.",
+symptoms:"Persistent cough, weight loss, night sweats, fever",
+treatment:"Isoniazid, rifampicin, pyrazinamide and ethambutol"
+},
+
+{
+name:"Diabetes Mellitus",
+image:"images/diabetes.jpg",
+description:"Diabetes is a metabolic disorder characterized by high blood sugar levels due to insulin deficiency or resistance.",
+symptoms:"Excessive thirst, frequent urination, fatigue",
+treatment:"Insulin therapy and oral hypoglycemic drugs"
+},
+
+{
+name:"Hypertension",
+image:"images/hypertension.jpg",
+description:"Hypertension is a chronic condition where blood pressure remains persistently elevated.",
+symptoms:"Often asymptomatic, headache, dizziness",
+treatment:"Lifestyle modification and antihypertensive medications"
+},
+
+{
+name:"Asthma",
+image:"images/asthma.jpg",
+description:"Asthma is a chronic inflammatory disease of the airways causing reversible airway obstruction.",
+symptoms:"Wheezing, shortness of breath, cough",
+treatment:"Bronchodilators and inhaled corticosteroids"
+},
+
+{
+name:"Pneumonia",
+image:"images/pneumonia.jpg",
+description:"Pneumonia is an infection that inflames the air sacs in one or both lungs.",
+symptoms:"Cough with sputum, fever, chest pain",
+treatment:"Antibiotics, antivirals, supportive therapy"
+},
+
+{
+name:"HIV/AIDS",
+image:"images/hiv.jpg",
+description:"HIV attacks the immune system and weakens the body's ability to fight infections.",
+symptoms:"Fever, weight loss, recurrent infections",
+treatment:"Antiretroviral therapy (ART)"
+},
+
+{
+name:"Hepatitis B",
+image:"images/hepatitisb.jpg",
+description:"Hepatitis B is a viral infection that attacks the liver and can cause chronic disease.",
+symptoms:"Jaundice, fatigue, abdominal pain",
+treatment:"Antiviral medications"
+},
+
+{
+name:"Typhoid Fever",
+image:"images/typhoid.jpg",
+description:"Typhoid fever is a bacterial infection caused by Salmonella typhi.",
+symptoms:"High fever, abdominal pain, diarrhea",
+treatment:"Antibiotics such as ceftriaxone or azithromycin"
+},
+
+{
+name:"Cholera",
+image:"images/cholera.jpg",
+description:"Cholera is an acute diarrheal illness caused by Vibrio cholerae infection.",
+symptoms:"Severe watery diarrhea, dehydration",
+treatment:"Oral rehydration salts and antibiotics"
+},
+
+{
+name:"Measles",
+image:"images/measles.jpg",
+description:"Measles is a highly contagious viral disease characterized by rash and fever.",
+symptoms:"Fever, cough, red eyes, rash",
+treatment:"Supportive care and vitamin A"
+},
+
+{
+name:"Chickenpox",
+image:"images/chickenpox.jpg",
+description:"Chickenpox is a viral infection caused by the varicella-zoster virus.",
+symptoms:"Itchy rash, fever, fatigue",
+treatment:"Antiviral medication and supportive care"
+},
+
+{
+name:"Dengue Fever",
+image:"images/dengue.jpg",
+description:"Dengue is a mosquito-borne viral infection common in tropical regions.",
+symptoms:"High fever, severe headache, joint pain",
+treatment:"Supportive treatment and hydration"
+},
+
+{
+name:"Meningitis",
+image:"images/meningitis.jpg",
+description:"Meningitis is inflammation of the protective membranes covering the brain and spinal cord.",
+symptoms:"Neck stiffness, fever, headache",
+treatment:"Antibiotics or antivirals depending on cause"
+},
+
+{
+name:"Rabies",
+image:"images/rabies.jpg",
+description:"Rabies is a fatal viral disease transmitted through animal bites.",
+symptoms:"Fever, agitation, hydrophobia",
+treatment:"Post-exposure vaccination"
+},
+
+{
+name:"Leprosy",
+image:"images/leprosy.jpg",
+description:"Leprosy is a chronic infectious disease caused by Mycobacterium leprae affecting skin and nerves.",
+symptoms:"Skin lesions, numbness",
+treatment:"Multidrug therapy (MDT)"
+},
+
+{
+name:"Scabies",
+image:"images/scabies.jpg",
+description:"Scabies is a contagious skin infestation caused by the mite Sarcoptes scabiei.",
+symptoms:"Severe itching, rash",
+treatment:"Permethrin cream or ivermectin"
+},
+
+{
+name:"Ringworm",
+image:"images/ringworm.jpg",
+description:"Ringworm is a fungal infection of the skin.",
+symptoms:"Circular itchy rash",
+treatment:"Antifungal creams or tablets"
+},
+
+{
+name:"Osteoarthritis",
+image:"images/osteoarthritis.jpg",
+description:"Osteoarthritis is degeneration of joint cartilage causing pain and stiffness.",
+symptoms:"Joint pain, stiffness",
+treatment:"Pain relief medication and physiotherapy"
+},
+
+{
+name:"Rheumatoid Arthritis",
+image:"images/rheumatoid.jpg",
+description:"Rheumatoid arthritis is an autoimmune disease causing chronic inflammation of joints.",
+symptoms:"Joint swelling, stiffness",
+treatment:"DMARDs such as methotrexate"
+}
+
+]

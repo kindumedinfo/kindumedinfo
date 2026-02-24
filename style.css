@@ -1,0 +1,23 @@
+#symptom-checker{
+
+background:#e8f4ff;
+padding:40px;
+text-align:center;
+
+}
+
+#symptom-checker input{
+
+padding:10px;
+width:250px;
+
+}
+
+#symptom-checker button{
+
+padding:10px 20px;
+background:green;
+color:white;
+border:none;
+
+}
